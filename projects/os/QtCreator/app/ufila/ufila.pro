@@ -16,7 +16,7 @@
 #   File: ufila.pro
 #
 # Author: $author$
-#   Date: 1/26/2022
+#   Date: 5/8/2022
 #
 # os specific QtCreator project .pro file for framework ufila executable ufila
 ########################################################################

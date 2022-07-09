@@ -16,14 +16,14 @@
 #   File: libufila.pri
 #
 # Author: $author$
-#   Date: 1/26/2022
+#   Date: 3/28/2022, 5/8/2022
 #
 # generic QtCreator project .pri file for framework ufila static library libufila
 ########################################################################
 
 ########################################################################
 # libufila
-XOS_LIB_UFILA_VERSION_BUILD_DATE = 1/26/2022 #$$system(~/bin/utility/tdate)
+XOS_LIB_UFILA_VERSION_BUILD_DATE = 5/8/2022 #$$system(~/bin/utility/tdate)
 
 # libufila TARGET
 #

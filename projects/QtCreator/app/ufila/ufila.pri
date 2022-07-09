@@ -16,7 +16,7 @@
 #   File: ufila.pri
 #
 # Author: $author$
-#   Date: 1/26/2022
+#   Date: 5/8/2022
 #
 # generic QtCreator project .pri file for framework ufila executable ufila
 ########################################################################
@@ -44,23 +44,25 @@ XOS_CONSOLE_MAIN_MAIN \
 # ufila_exe OBJECTIVE_HEADERS
 #
 #ufila_exe_OBJECTIVE_HEADERS += \
-#$${UFILA_SRC}/xos/app/console/ufila/main.hh \
+#$${UFILA_SRC}/xos/app/console/ufila/version/main.hh \
 
 # ufila_exe OBJECTIVE_SOURCES
 #
 #ufila_exe_OBJECTIVE_SOURCES += \
-#$${UFILA_SRC}/xos/app/console/ufila/main.mm \
+#$${UFILA_SRC}/xos/app/console/ufila/version/main.mm \
 
 ########################################################################
 # ufila_exe HEADERS
 #
 ufila_exe_HEADERS += \
-$${UFILA_SRC}/xos/app/console/ufila/main.hpp \
+$${UFILA_SRC}/xos/app/console/ufila/version/main_opt.hpp \
+$${UFILA_SRC}/xos/app/console/ufila/version/main.hpp \
 
 # ufila_exe SOURCES
 #
 ufila_exe_SOURCES += \
-$${UFILA_SRC}/xos/app/console/ufila/main.cpp \
+$${UFILA_SRC}/xos/app/console/ufila/version/main_opt.cpp \
+$${UFILA_SRC}/xos/app/console/ufila/version/main.cpp \
 
 ########################################################################
 # ufila_exe FRAMEWORKS
