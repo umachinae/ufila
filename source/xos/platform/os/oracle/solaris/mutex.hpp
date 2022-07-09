@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////
-/// Copyright (c) 1988-2022 $organization$
+/// Copyright (c) 1988-2019 $organization$
 ///
 /// This software is provided by the author and contributors ``as is'' 
 /// and any express or implied warranties, including, but not limited to, 
@@ -13,29 +13,26 @@
 /// or otherwise) arising in any way out of the use of this software, 
 /// even if advised of the possibility of such damage.
 ///
-///   File: version.hpp
+///   File: mutex.hpp
 ///
 /// Author: $author$
-///   Date: 3/28/2022
+///   Date: 12/27/2019
 ///////////////////////////////////////////////////////////////////////
-#if !defined(XOS_LIB_UFILA_VERSION_HPP)
-#define XOS_LIB_UFILA_VERSION_HPP
+#ifndef XOS_PLATFORM_OS_ORACLE_SOLARIS_MUTEX_HPP
+#define XOS_PLATFORM_OS_ORACLE_SOLARIS_MUTEX_HPP
 
-#include "xos/lib/version.hpp"
+#include "xos/platform/os/oracle/solaris/mutex.h"
 
 namespace xos {
-namespace lib {
-namespace ufila {
+namespace platform {
+namespace os {
+namespace oracle {
+namespace solaris {
 
-/// class version
-class exported version {
-public:
-    /// which
-    static const xos::lib::version& which();
-}; /// class version
-
-} /// namespace ufila
-} /// namespace lib
+} /// namespace solaris
+} /// namespace oracle
+} /// namespace os
+} /// namespace platform
 } /// namespace xos
 
-#endif /// !defined(XOS_LIB_UFILA_VERSION_HPP)
+#endif /// ndef XOS_PLATFORM_OS_ORACLE_SOLARIS_MUTEX_HPP 

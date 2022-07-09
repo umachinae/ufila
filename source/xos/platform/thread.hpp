@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////
-/// Copyright (c) 1988-2022 $organization$
+/// Copyright (c) 1988-2019 $organization$
 ///
 /// This software is provided by the author and contributors ``as is'' 
 /// and any express or implied warranties, including, but not limited to, 
@@ -13,29 +13,20 @@
 /// or otherwise) arising in any way out of the use of this software, 
 /// even if advised of the possibility of such damage.
 ///
-///   File: version.hpp
+///   File: thread.hpp
 ///
 /// Author: $author$
-///   Date: 3/28/2022
+///   Date: 1/20/2020
 ///////////////////////////////////////////////////////////////////////
-#if !defined(XOS_LIB_UFILA_VERSION_HPP)
-#define XOS_LIB_UFILA_VERSION_HPP
+#ifndef XOS_PLATFORM_THREAD_HPP
+#define XOS_PLATFORM_THREAD_HPP
 
-#include "xos/lib/version.hpp"
+#include "xos/platform/thread.h"
 
 namespace xos {
-namespace lib {
-namespace ufila {
+namespace platform {
 
-/// class version
-class exported version {
-public:
-    /// which
-    static const xos::lib::version& which();
-}; /// class version
-
-} /// namespace ufila
-} /// namespace lib
+} /// namespace platform
 } /// namespace xos
 
-#endif /// !defined(XOS_LIB_UFILA_VERSION_HPP)
+#endif /// ndef XOS_PLATFORM_THREAD_HPP

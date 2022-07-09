@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////
-/// Copyright (c) 1988-2022 $organization$
+/// Copyright (c) 1988-2020 $organization$
 ///
 /// This software is provided by the author and contributors ``as is'' 
 /// and any express or implied warranties, including, but not limited to, 
@@ -13,29 +13,34 @@
 /// or otherwise) arising in any way out of the use of this software, 
 /// even if advised of the possibility of such damage.
 ///
-///   File: version.hpp
+///   File: main.cpp
 ///
 /// Author: $author$
-///   Date: 3/28/2022
+///   Date: 12/18/2020, 10/9/2021
 ///////////////////////////////////////////////////////////////////////
-#if !defined(XOS_LIB_UFILA_VERSION_HPP)
-#define XOS_LIB_UFILA_VERSION_HPP
+#include "xos/app/console/fila/main.hpp"
 
-#include "xos/lib/version.hpp"
+#if defined(XOS_CONSOLE_MAIN_MAIN)
+#if !defined(XOS_APP_CONSOLE_ROSTRA_MAIN_INSTANCE)
+#define XOS_APP_CONSOLE_FILA_MAIN_INSTANCE
+#endif /// !defined(XOS_APP_CONSOLE_ROSTRA_MAIN_INSTANCE)
+#endif /// defined(XOS_CONSOLE_MAIN_MAIN)
+
+#if defined(XOS_APP_CONSOLE_FILA_MAIN_INSTANCE)
+#include "xos/console/main_main.cpp"
+#endif /// defined(XOS_APP_CONSOLE_FILA_MAIN_INSTANCE)
 
 namespace xos {
-namespace lib {
-namespace ufila {
+namespace app {
+namespace console {
+namespace fila {
 
-/// class version
-class exported version {
-public:
-    /// which
-    static const xos::lib::version& which();
-}; /// class version
+/// class maint
+#if defined(XOS_APP_CONSOLE_FILA_MAIN_INSTANCE)
+static main the_main;
+#endif /// defined(XOS_APP_CONSOLE_FILA_MAIN_INSTANCE)
 
-} /// namespace ufila
-} /// namespace lib
+} /// namespace fila
+} /// namespace console
+} /// namespace app
 } /// namespace xos
-
-#endif /// !defined(XOS_LIB_UFILA_VERSION_HPP)

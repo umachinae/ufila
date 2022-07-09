@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////
-/// Copyright (c) 1988-2022 $organization$
+/// Copyright (c) 1988-2020 $organization$
 ///
 /// This software is provided by the author and contributors ``as is'' 
 /// and any express or implied warranties, including, but not limited to, 
@@ -13,29 +13,29 @@
 /// or otherwise) arising in any way out of the use of this software, 
 /// even if advised of the possibility of such damage.
 ///
-///   File: version.hpp
+///   File: thread.cpp
 ///
 /// Author: $author$
-///   Date: 3/28/2022
+///   Date: 10/1/2020
 ///////////////////////////////////////////////////////////////////////
-#if !defined(XOS_LIB_UFILA_VERSION_HPP)
-#define XOS_LIB_UFILA_VERSION_HPP
+#include "xos/mt/microsoft/windows/thread.hpp"
 
-#include "xos/lib/version.hpp"
+#if !defined(XOS_MT_MICROSOFT_WINDOWS_THREAD_INSTANCE)
+//#define XOS_MT_MICROSOFT_WINDOWS_THREAD_INSTANCE
+#endif /// !defined(XOS_MT_MICROSOFT_WINDOWS_THREAD_INSTANCE)
 
 namespace xos {
-namespace lib {
-namespace ufila {
+namespace mt {
+namespace microsoft {
+namespace windows {
 
-/// class version
-class exported version {
-public:
-    /// which
-    static const xos::lib::version& which();
-}; /// class version
+///  Class: threadt
+#if defined(XOS_MT_MICROSOFT_WINDOWS_THREAD_INSTANCE)
+//static thread the_thread;
+#endif /// defined(XOS_MT_MICROSOFT_WINDOWS_THREAD_INSTANCE)
 
-} /// namespace ufila
-} /// namespace lib
+
+} /// namespace windows
+} /// namespace microsoft
+} /// namespace mt
 } /// namespace xos
-
-#endif /// !defined(XOS_LIB_UFILA_VERSION_HPP)

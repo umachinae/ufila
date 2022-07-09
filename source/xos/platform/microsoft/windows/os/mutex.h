@@ -1,5 +1,6 @@
+/*/
 ///////////////////////////////////////////////////////////////////////
-/// Copyright (c) 1988-2022 $organization$
+/// Copyright (c) 1988-2020 $organization$
 ///
 /// This software is provided by the author and contributors ``as is'' 
 /// and any express or implied warranties, including, but not limited to, 
@@ -13,29 +14,23 @@
 /// or otherwise) arising in any way out of the use of this software, 
 /// even if advised of the possibility of such damage.
 ///
-///   File: version.hpp
+///   File: mutex.h
 ///
 /// Author: $author$
-///   Date: 3/28/2022
+///   Date: 12/19/2020
 ///////////////////////////////////////////////////////////////////////
-#if !defined(XOS_LIB_UFILA_VERSION_HPP)
-#define XOS_LIB_UFILA_VERSION_HPP
+/*/
+#ifndef XOS_PLATFORM_MICROSOFT_WINDOWS_OS_MUTEX_H
+#define XOS_PLATFORM_MICROSOFT_WINDOWS_OS_MUTEX_H
 
-#include "xos/lib/version.hpp"
+#include "xos/platform/os/mutex.h"
 
-namespace xos {
-namespace lib {
-namespace ufila {
+#if defined(__cplusplus)
+extern "C" {
+#endif /*/ defined(__cplusplus) /*/
 
-/// class version
-class exported version {
-public:
-    /// which
-    static const xos::lib::version& which();
-}; /// class version
+#if defined(__cplusplus)
+} /*/ extern "C" /*/
+#endif /*/ defined(__cplusplus) /*/
 
-} /// namespace ufila
-} /// namespace lib
-} /// namespace xos
-
-#endif /// !defined(XOS_LIB_UFILA_VERSION_HPP)
+#endif /*/ XOS_PLATFORM_MICROSOFT_WINDOWS_OS_MUTEX_H /*/

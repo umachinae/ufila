@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////
-/// Copyright (c) 1988-2022 $organization$
+/// Copyright (c) 1988-2019 $organization$
 ///
 /// This software is provided by the author and contributors ``as is'' 
 /// and any express or implied warranties, including, but not limited to, 
@@ -13,29 +13,19 @@
 /// or otherwise) arising in any way out of the use of this software, 
 /// even if advised of the possibility of such damage.
 ///
-///   File: version.hpp
+///   File: mutex.cpp
 ///
 /// Author: $author$
-///   Date: 3/28/2022
+///   Date: 12/26/2019
 ///////////////////////////////////////////////////////////////////////
-#if !defined(XOS_LIB_UFILA_VERSION_HPP)
-#define XOS_LIB_UFILA_VERSION_HPP
-
-#include "xos/lib/version.hpp"
+#include "xos/mt/apple/osx/mutex.hpp"
 
 namespace xos {
-namespace lib {
-namespace ufila {
+namespace mt {
+namespace apple {
+namespace osx {
 
-/// class version
-class exported version {
-public:
-    /// which
-    static const xos::lib::version& which();
-}; /// class version
-
-} /// namespace ufila
-} /// namespace lib
+} /// namespace osx
+} /// namespace apple
+} /// namespace mt
 } /// namespace xos
-
-#endif /// !defined(XOS_LIB_UFILA_VERSION_HPP)

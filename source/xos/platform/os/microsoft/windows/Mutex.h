@@ -1,5 +1,6 @@
+/*/
 ///////////////////////////////////////////////////////////////////////
-/// Copyright (c) 1988-2022 $organization$
+/// Copyright (c) 1988-2020 $organization$
 ///
 /// This software is provided by the author and contributors ``as is'' 
 /// and any express or implied warranties, including, but not limited to, 
@@ -13,29 +14,42 @@
 /// or otherwise) arising in any way out of the use of this software, 
 /// even if advised of the possibility of such damage.
 ///
-///   File: version.hpp
+///   File: Mutex.h
 ///
 /// Author: $author$
-///   Date: 3/28/2022
+///   Date: 1/3/2020
 ///////////////////////////////////////////////////////////////////////
-#if !defined(XOS_LIB_UFILA_VERSION_HPP)
-#define XOS_LIB_UFILA_VERSION_HPP
+/*/
+#ifndef XOS_PLATFORM_OS_MICROSOFT_WINDOWS_MUTEX_H
+#define XOS_PLATFORM_OS_MICROSOFT_WINDOWS_MUTEX_H
 
-#include "xos/lib/version.hpp"
+#include "xos/platform/os/microsoft/windows/Handle.h"
 
-namespace xos {
-namespace lib {
-namespace ufila {
+#if defined(__cplusplus)
+extern "C" {
+#endif /*/ defined(__cplusplus) /*/
 
-/// class version
-class exported version {
-public:
-    /// which
-    static const xos::lib::version& which();
-}; /// class version
+#if !defined(WINDOWS)
+/*/
+/// windows mutexes
+/// ...
+/*/
+HANDLE WINAPI CreateMutex(
+  _In_opt_ LPSECURITY_ATTRIBUTES lpMutexAttributes,
+  _In_     BOOL                  bInitialOwner,
+  _In_opt_ LPCTSTR               lpName
+);
+BOOL WINAPI ReleaseMutex(
+  _In_ HANDLE hMutex
+);
+/*/
+/// ...
+/// windows mutexes
+/*/
+#endif /*/ !defined(WINDOWS) /*/
 
-} /// namespace ufila
-} /// namespace lib
-} /// namespace xos
+#if defined(__cplusplus)
+} /*/ extern "C" /*/
+#endif /*/ defined(__cplusplus) /*/
 
-#endif /// !defined(XOS_LIB_UFILA_VERSION_HPP)
+#endif /*/ ndef XOS_PLATFORM_OS_MICROSOFT_WINDOWS_MUTEX_H /*/

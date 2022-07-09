@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////
-/// Copyright (c) 1988-2022 $organization$
+/// Copyright (c) 1988-2020 $organization$
 ///
 /// This software is provided by the author and contributors ``as is'' 
 /// and any express or implied warranties, including, but not limited to, 
@@ -13,29 +13,40 @@
 /// or otherwise) arising in any way out of the use of this software, 
 /// even if advised of the possibility of such damage.
 ///
-///   File: version.hpp
+///   File: semaphore.hpp
 ///
 /// Author: $author$
-///   Date: 3/28/2022
+///   Date: 1/6/2020
 ///////////////////////////////////////////////////////////////////////
-#if !defined(XOS_LIB_UFILA_VERSION_HPP)
-#define XOS_LIB_UFILA_VERSION_HPP
+#ifndef XOS_MT_OS_SEMAPHORE_HPP
+#define XOS_MT_OS_SEMAPHORE_HPP
 
-#include "xos/lib/version.hpp"
+#include "xos/mt/os/os.hpp"
+
+#if defined(WINDOWS)  
+#include "xos/mt/microsoft/windows/semaphore.hpp"
+#elif defined(APPLEOSX)  
+#include "xos/mt/apple/osx/semaphore.hpp"
+#elif defined(APPLEIOS)  
+#include "xos/mt/apple/ios/semaphore.hpp"
+#elif defined(SOLARIS)  
+#include "xos/mt/oracle/solaris/semaphore.hpp"
+#elif defined(MACH)
+#include "xos/mt/mach/semaphore.hpp"
+#elif defined(LINUX)
+#include "xos/mt/linux/semaphore.hpp"
+#else /// defined(LINUX)  
+#include "xos/mt/posix/semaphore.hpp"
+#endif /// defined(LINUX) 
 
 namespace xos {
-namespace lib {
-namespace ufila {
+namespace mt {
+namespace os {
 
-/// class version
-class exported version {
-public:
-    /// which
-    static const xos::lib::version& which();
-}; /// class version
+typedef os::semaphore semaphore;
 
-} /// namespace ufila
-} /// namespace lib
+} /// namespace os
+} /// namespace mt
 } /// namespace xos
 
-#endif /// !defined(XOS_LIB_UFILA_VERSION_HPP)
+#endif /// ndef XOS_MT_OS_SEMAPHORE_HPP 

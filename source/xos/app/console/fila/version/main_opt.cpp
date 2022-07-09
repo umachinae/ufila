@@ -13,29 +13,36 @@
 /// or otherwise) arising in any way out of the use of this software, 
 /// even if advised of the possibility of such damage.
 ///
-///   File: version.hpp
+///   File: main_opt.cpp
 ///
 /// Author: $author$
-///   Date: 3/28/2022
+///   Date: 5/10/2022
 ///////////////////////////////////////////////////////////////////////
-#if !defined(XOS_LIB_UFILA_VERSION_HPP)
-#define XOS_LIB_UFILA_VERSION_HPP
+#include "xos/app/console/fila/version/main_opt.hpp"
 
-#include "xos/lib/version.hpp"
+#if !defined(XOS_APP_CONSOLE_FILA_VERSION_MAIN_OPT_INSTANCE)
+///#define XOS_APP_CONSOLE_FILA_VERSION_MAIN_OPT_INSTANCE
+#endif /// !defined(XOS_APP_CONSOLE_FILA_VERSION_MAIN_OPT_INSTANCE)
+
+#if defined(XOS_APP_CONSOLE_FILA_VERSION_MAIN_OPT_INSTANCE)
+#if !defined(NO_XOS_CONSOLE_MAIN_MAIN)
+#include "xos/console/main_main.cpp"
+#endif /// !defined(NO_XOS_CONSOLE_MAIN_MAIN)
+#endif /// defined(XOS_APP_CONSOLE_FILA_VERSION_MAIN_OPT_INSTANCE)
 
 namespace xos {
-namespace lib {
-namespace ufila {
+namespace app {
+namespace console {
+namespace fila {
+namespace version {
 
-/// class version
-class exported version {
-public:
-    /// which
-    static const xos::lib::version& which();
-}; /// class version
+/// class main_optt
+#if defined(XOS_APP_CONSOLE_FILA_VERSION_MAIN_OPT_INSTANCE)
+static main_opt the_main_opt;
+#endif /// defined(XOS_APP_CONSOLE_FILA_VERSION_MAIN_OPT_INSTANCE)
 
-} /// namespace ufila
-} /// namespace lib
+} /// namespace version
+} /// namespace fila
+} /// namespace console
+} /// namespace app
 } /// namespace xos
-
-#endif /// !defined(XOS_LIB_UFILA_VERSION_HPP)

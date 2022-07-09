@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////
-/// Copyright (c) 1988-2022 $organization$
+/// Copyright (c) 1988-2019 $organization$
 ///
 /// This software is provided by the author and contributors ``as is'' 
 /// and any express or implied warranties, including, but not limited to, 
@@ -13,29 +13,29 @@
 /// or otherwise) arising in any way out of the use of this software, 
 /// even if advised of the possibility of such damage.
 ///
-///   File: version.hpp
+///   File: conditions.cpp
 ///
 /// Author: $author$
-///   Date: 3/28/2022
+///   Date: 1/14/2020
 ///////////////////////////////////////////////////////////////////////
-#if !defined(XOS_LIB_UFILA_VERSION_HPP)
-#define XOS_LIB_UFILA_VERSION_HPP
+#include "xos/mt/conditions.hpp"
+#include "xos/platform/os/platform/condition.cpp"
 
-#include "xos/lib/version.hpp"
+/*/
+#if !defined(WINDOWS)
+#include "xos/platform/os/microsoft/windows/condition.cpp"
+#endif /// !defined(WINDOWS)
 
+#if !defined(SOLARIS)
+#include "xos/platform/os/oracle/solaris/condition.cpp"
+#endif /// !defined(SOLARIS)
+
+#if !defined(MACH) || defined(APPLE)
+#include "xos/platform/os/mach/condition.cpp"
+#endif /// !defined(MACH) || defined(APPLE)
+/*/
 namespace xos {
-namespace lib {
-namespace ufila {
+namespace mt {
 
-/// class version
-class exported version {
-public:
-    /// which
-    static const xos::lib::version& which();
-}; /// class version
-
-} /// namespace ufila
-} /// namespace lib
+} /// namespace mt
 } /// namespace xos
-
-#endif /// !defined(XOS_LIB_UFILA_VERSION_HPP)

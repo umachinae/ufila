@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////
-/// Copyright (c) 1988-2022 $organization$
+/// Copyright (c) 1988-2020 $organization$
 ///
 /// This software is provided by the author and contributors ``as is'' 
 /// and any express or implied warranties, including, but not limited to, 
@@ -13,29 +13,21 @@
 /// or otherwise) arising in any way out of the use of this software, 
 /// even if advised of the possibility of such damage.
 ///
-///   File: version.hpp
+///   File: semaphore.hpp
 ///
 /// Author: $author$
-///   Date: 3/28/2022
+///   Date: 1/6/2020
 ///////////////////////////////////////////////////////////////////////
-#if !defined(XOS_LIB_UFILA_VERSION_HPP)
-#define XOS_LIB_UFILA_VERSION_HPP
-
-#include "xos/lib/version.hpp"
+#include "xos/mt/microsoft/windows/semaphore.hpp"
 
 namespace xos {
-namespace lib {
-namespace ufila {
+namespace mt {
+namespace microsoft {
+namespace windows {
 
-/// class version
-class exported version {
-public:
-    /// which
-    static const xos::lib::version& which();
-}; /// class version
+/// class semaphoret
 
-} /// namespace ufila
-} /// namespace lib
+} /// namespace windows
+} /// namespace microsoft
+} /// namespace mt
 } /// namespace xos
-
-#endif /// !defined(XOS_LIB_UFILA_VERSION_HPP)
